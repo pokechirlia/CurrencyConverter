@@ -17,6 +17,18 @@ public class CurrencyConverter {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("a");
+        CurrencyConverter obj = new CurrencyConverter();
+        //obj.createInterface();
+        obj.runConverter();
+        
+        
+    }
+    
+    public void runConverter(){
+        Converter converter = new Converter();
+    }
+    
+    public void createInterface(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 AppDialogInterface dialog = new AppDialogInterface(new javax.swing.JFrame(), true);
