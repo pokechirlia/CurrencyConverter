@@ -6,6 +6,7 @@
 package currencyconverter;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -23,9 +24,13 @@ import java.util.logging.Logger;
 public class Converter {
     public Converter(){
         try {
+            File keyFile = new File("key.txt");
+            Scanner scanner = new Scanner(keyFile);
+            String APIkey = scanner.nextLine();
+            
             URL url = new URL("https://api.apilayer.com/currency_data/convert?to=VND&from=AUD&amount=5");
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
-            con.setRequestProperty("apikey", "boDU9Vlt8MUpJLStiXGWzZgRCqTgLUiA");
+            con.setRequestProperty("apikey", APIkey);
             con.setRequestMethod("GET");
             
             con.connect();
@@ -33,7 +38,7 @@ public class Converter {
             int responseCode = con.getResponseCode();
             System.out.println(responseCode);
             
-            //System.out.println(System.getenv());
+            //System.out.println(APIkey);
             
             if(responseCode == 200)
             {
