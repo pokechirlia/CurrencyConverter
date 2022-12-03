@@ -15,6 +15,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author dell
@@ -31,6 +32,8 @@ public class Converter {
             
             int responseCode = con.getResponseCode();
             System.out.println(responseCode);
+            
+            //System.out.println(System.getenv());
             
             if(responseCode == 200)
             {
