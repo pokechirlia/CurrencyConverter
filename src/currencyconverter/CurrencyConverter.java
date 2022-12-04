@@ -5,6 +5,9 @@
  */
 package currencyconverter;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author dell
@@ -25,7 +28,11 @@ public class CurrencyConverter {
     }
     
     public void runConverter(){
-        Converter converter = new Converter();
+        try {
+            Converter converter = new Converter();
+        } catch (Exception ex) {
+            //Logger.getLogger(CurrencyConverter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void createInterface(){

@@ -17,8 +17,9 @@ import java.util.logging.Logger;
 public class JSONReader {
     private String jsonString = "";
     private double quote = 0;
+    private boolean success = false;
     
-    public JSONReader(BufferedReader in)
+    public JSONReader(BufferedReader in) throws Exception
     {
         String inputLine;
         try {
@@ -26,11 +27,15 @@ public class JSONReader {
             {
                 jsonString += inputLine + "\n";
                 if(inputLine.contains("\"quote\""))
-                {
-                    quote = Double.parseDouble(inputLine.substring(inputLine.lastIndexOf(": ") + 1));
-                }
+                     quote = Double.parseDouble(inputLine.substring(inputLine.lastIndexOf(": ") + 1));
+                if(inputLine.contains("\"success\""))
+                     success = Boolean.parseBoolean(inputLine.substring(inputLine.lastIndexOf(": ") + 1));
+                
                 
             }
+            
+            if(!success)
+                throw new Exception("Invalid input");
         } catch (IOException ex) {
             Logger.getLogger(JSONReader.class.getName()).log(Level.SEVERE, null, ex);
         }

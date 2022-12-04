@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -21,7 +20,7 @@ import java.util.logging.Logger;
  * @author dell
  */
 public class Converter {
-    public Converter(){
+    public Converter() throws Exception{
         try {
             File keyFile = new File("key.txt");
             Scanner scanner = new Scanner(keyFile);
