@@ -16,7 +16,6 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  *
  * @author dell
@@ -36,7 +35,7 @@ public class Converter {
             con.connect();
             
             int responseCode = con.getResponseCode();
-            System.out.println(responseCode);
+            //System.out.println(responseCode);
             
             //System.out.println(APIkey);
             
@@ -44,14 +43,13 @@ public class Converter {
             {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 //StringBuffer response = new StringBuffer();
-                String inputLine;
-                while((inputLine = in.readLine()) != null){
-                System.out.println(inputLine);
+                JSONReader reader = new JSONReader(in);
+                
+                System.out.println(reader.getQuote());
+                
             }
-            }
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(Converter.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+                
+            } catch (IOException ex) {
             Logger.getLogger(Converter.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
