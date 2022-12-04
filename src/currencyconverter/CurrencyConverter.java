@@ -21,7 +21,7 @@ public class CurrencyConverter {
         // TODO code application logic here
         System.out.println("a");
         CurrencyConverter obj = new CurrencyConverter();
-        //obj.createInterface();
+        obj.createInterface();
         obj.runConverter();
         
         
