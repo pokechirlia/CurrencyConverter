@@ -20,6 +20,8 @@ import java.util.logging.Logger;
  * @author dell
  */
 public class Converter {
+    
+    double result = 0;
     public Converter(String fromCurrency, String toCurrency, double amount){
         
         String urlString = "https://api.apilayer.com/currency_data/convert?to=" + toCurrency + "&from=" + fromCurrency + "&amount=" + amount;
@@ -50,13 +52,17 @@ public class Converter {
                 //StringBuffer response = new StringBuffer();
                 JSONReader reader = new JSONReader(in);
                 
-                System.out.println(reader.getQuote());
+                result = reader.getQuote();
                 
             }
                 
             } catch (IOException ex) {
             Logger.getLogger(Converter.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public double getResult(){
+        return result;
     }
     
 }
