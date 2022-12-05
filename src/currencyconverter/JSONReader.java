@@ -26,7 +26,7 @@ public class JSONReader {
             while((inputLine = in.readLine()) != null)
             {
                 jsonString += inputLine + "\n";
-                if(inputLine.contains("\"quote\""))
+                if(inputLine.contains("\"result\""))
                      quote = Double.parseDouble(inputLine.substring(inputLine.lastIndexOf(": ") + 1));
                 if(inputLine.contains("\"success\""))
                      success = Boolean.parseBoolean(inputLine.substring(inputLine.lastIndexOf(": ") + 1));

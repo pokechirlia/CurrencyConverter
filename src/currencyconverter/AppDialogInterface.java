@@ -139,7 +139,6 @@ public class AppDialogInterface extends javax.swing.JDialog {
             Converter converter = new Converter(fromCurrency, toCurrency, amount);
             jTextField2.setText(Double.toString(converter.getResult()));
         } catch (Exception ex) {
-            //Logger.getLogger(CurrencyConverter.class.getName()).log(Level.SEVERE, null, ex);
             jTextField2.setText("Invalid input");
             System.out.println(ex.getMessage());
         }

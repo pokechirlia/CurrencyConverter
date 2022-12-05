@@ -27,13 +27,12 @@ public class Converter {
         String urlString = "https://api.apilayer.com/currency_data/convert?to=" + toCurrency + "&from=" + fromCurrency + "&amount=" + amount;
         
         
-        System.out.println("THE URLSTRING IS " + urlString);
+        //System.out.println("THE URLSTRING IS " + urlString);
         try {
             File keyFile = new File("key.txt");
             Scanner scanner = new Scanner(keyFile);
             String APIkey = scanner.nextLine();
             
-            //URL url = new URL("https://api.apilayer.com/currency_data/convert?to=VND&from=AUD&amount=1.0");
             URL url = new URL(urlString);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
             con.setRequestProperty("apikey", APIkey);
