@@ -19,7 +19,7 @@ public class JSONReader {
     private double quote = 0;
     private boolean success = false;
     
-    public JSONReader(BufferedReader in) throws Exception
+    public JSONReader(BufferedReader in)
     {
         String inputLine;
         try {
@@ -34,8 +34,6 @@ public class JSONReader {
                 
             }
             
-            if(!success)
-                throw new Exception("Invalid input");
         } catch (IOException ex) {
             Logger.getLogger(JSONReader.class.getName()).log(Level.SEVERE, null, ex);
         }
