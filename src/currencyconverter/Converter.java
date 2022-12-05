@@ -20,7 +20,10 @@ import java.util.logging.Logger;
  * @author dell
  */
 public class Converter {
-    public Converter() throws Exception{
+    public Converter(String fromCurrency, String toCurrency, double amount) throws Exception{
+        
+        String urlString = "https://api.apilayer.com/currency_data/convert?to=" + toCurrency + "&from=" + fromCurrency + "&amount=" + amount;
+        
         try {
             File keyFile = new File("key.txt");
             Scanner scanner = new Scanner(keyFile);

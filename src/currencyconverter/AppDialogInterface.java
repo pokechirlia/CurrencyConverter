@@ -131,7 +131,16 @@ public class AppDialogInterface extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jTextField2.setText("?");
+        try {
+            String fromCurrency = jComboBox1.getSelectedItem().toString();  
+            String toCurrency = jComboBox1.getSelectedItem().toString();
+            double amount = Double.parseDouble(jTextField1.getText());
+            
+            Converter converter = new Converter(fromCurrency, toCurrency, amount);
+        } catch (Exception ex) {
+            //Logger.getLogger(CurrencyConverter.class.getName()).log(Level.SEVERE, null, ex);
+            jTextField2.setText("Invalid input");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

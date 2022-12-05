@@ -5,6 +5,8 @@
         <group>
             <file>file:/D:/Personal-projects/Java/CurrencyConverter/src/currencyconverter/CurrencyConverter.java</file>
             <file>file:/D:/Personal-projects/Java/CurrencyConverter/src/currencyconverter/Converter.java</file>
+            <file>file:/D:/Personal-projects/Java/CurrencyConverter/src/currencyconverter/JSONReader.java</file>
+            <file>file:/D:/Personal-projects/Java/CurrencyConverter/src/currencyconverter/Currency.java</file>
             <file>file:/D:/Personal-projects/Java/CurrencyConverter/src/currencyconverter/AppDialogInterface.java</file>
         </group>
     </open-files>

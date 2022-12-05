@@ -22,18 +22,18 @@ public class CurrencyConverter {
         System.out.println("a");
         CurrencyConverter obj = new CurrencyConverter();
         obj.createInterface();
-        obj.runConverter();
+        //obj.runConverter();
         
         
     }
-    
+    /*
     public void runConverter(){
         try {
             Converter converter = new Converter();
         } catch (Exception ex) {
             //Logger.getLogger(CurrencyConverter.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    }*/
     
     public void createInterface(){
         java.awt.EventQueue.invokeLater(new Runnable() {
